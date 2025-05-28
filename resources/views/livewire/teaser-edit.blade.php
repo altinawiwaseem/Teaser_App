@@ -179,7 +179,7 @@
             
             const files = e.dataTransfer.files;
             if (files && files.length > 0) {
-                this.processFile(files[0], true); // true = from drag & drop
+                this.processFile(files[0], true); 
             }
         },
 
@@ -187,7 +187,7 @@
             e.preventDefault();
             const file = e.target.files?.[0];
             if (file) {
-                this.processFile(file, false); // false = from file input
+                this.processFile(file, false); 
             }
         },
 
@@ -210,20 +210,20 @@
                 return;
             }
             
-            // Store the file reference
+            
             this.selectedFile = file;
             
-            // If from drag & drop, we need to set the file to the input
+          
             if (fromDrop) {
                 this.setFileToInput(file);
             }
             
-            // Show preview
+           
             this.showPreview(file);
         },
 
         setFileToInput(file) {
-            // Create a new FileList with the dropped file
+           
             const dataTransfer = new DataTransfer();
             dataTransfer.items.add(file);
             
@@ -254,7 +254,6 @@
             this.resetState();
             this.clearFileInput();
             
-            // Also call Livewire method if available
             if (typeof @this !== 'undefined' && @this.removeImage) {
                 @this.removeImage();
             }
@@ -263,8 +262,7 @@
         clearFileInput() {
             if (this.$refs.fileInput) {
                 this.$refs.fileInput.value = '';
-                // Trigger Livewire change event
-                const changeEvent = new Event('change', { bubbles: true });
+                            const changeEvent = new Event('change', { bubbles: true });
                 this.$refs.fileInput.dispatchEvent(changeEvent);
             }
         },
