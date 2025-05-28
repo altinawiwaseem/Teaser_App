@@ -2,10 +2,19 @@
 
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\TeaserController;
+use App\Livewire\TeaserEdit;
 
 Route::get('/', function () {
     return view('welcome');
-});
+})->name('home');
+
+Route::get('/teasers/{id}', [TeaserController::class, 'show'])->name('teasers.show');
+
+
+// Edit = Livewire
+Route::get('/teasers/{teaser}/edit', TeaserEdit::class)->middleware('auth')->name('teasers.edit');
+
 
 Route::get('/dashboard', function () {
     return view('dashboard');
@@ -17,4 +26,4 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
-require __DIR__.'/auth.php';
+require __DIR__ . '/auth.php';

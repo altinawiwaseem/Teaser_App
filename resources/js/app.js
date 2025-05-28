@@ -1,7 +1,8 @@
 import "./bootstrap";
-
 import Alpine from "alpinejs";
 
-window.Alpine = Alpine;
-
-Alpine.start();
+// Initialize Alpine only once
+if (!window.Alpine) {
+    window.Alpine = Alpine;
+    Alpine.start();
+}
