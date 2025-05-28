@@ -262,7 +262,7 @@
         clearFileInput() {
             if (this.$refs.fileInput) {
                 this.$refs.fileInput.value = '';
-                            const changeEvent = new Event('change', { bubbles: true });
+                const changeEvent = new Event('change', { bubbles: true });
                 this.$refs.fileInput.dispatchEvent(changeEvent);
             }
         },
