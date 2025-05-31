@@ -1,4 +1,5 @@
 <div class="max-w-[960px] mx-auto px-4">
+  
     <div class="max-w-[960px] mx-auto space-y-6">
         @foreach($teasers as $teaser)
         <div
@@ -32,9 +33,8 @@
                     </div>
                 </div>
             </a>
-
             @auth
-            @if(auth()->id() === $teaser->user_id)
+            @if(auth()->id() == $teaser->user_id)
             <a href="{{ route('teasers.edit', $teaser) }}"
                 class="absolute top-3 right-3 bg-white bg-opacity-90 hover:bg-opacity-100 p-2 rounded-full shadow-sm transition-all hover:shadow-md">
                 <svg class="w-4 h-4 text-gray-600 hover:text-gray-800" fill="none" stroke="currentColor"
