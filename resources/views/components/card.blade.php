@@ -3,7 +3,7 @@
     'headerColor' => 'bg-green-600'
 ])
 
-<div class="max-w-3xl mx-auto bg-white rounded-lg shadow-sm overflow-hidden">
+<div class="max-w-[960px] mx-auto bg-white rounded-lg shadow-sm overflow-hidden">
     <!-- Header -->
     <div class="{{ $headerColor }} text-white text-center py-4">
         <h2 class="text-lg font-medium">{{ $title }}</h2>

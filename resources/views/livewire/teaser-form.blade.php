@@ -4,36 +4,26 @@
             <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <!-- Left Column - Überschrift & Text -->
                 <div class="space-y-4">
-                    <x-inputs.title 
-                        wire-model="title"
-                        :required="true"
-                    />
+                    <x-inputs.title wire-model="title" :required="true" />
 
-                    <x-inputs.text
-                        wire-model="text"
-                        rows="8"
-                        :required="true"
-                    />
+                    <x-inputs.text wire-model="text" rows="8" :required="true" />
                 </div>
 
                 <!-- Right Column - Image Upload -->
                 <div>
-                    <x-inputs.image-upload 
-    wire-model="image" 
-    label="Bild hochladen"
-/>
+                    <x-inputs.image-upload wire-model="image" label="Bild hochladen" />
                 </div>
             </div>
 
-            <x-submit-button 
-                text="Inhalte ausspielen" 
-                align="right"
-            />
+            <div class="flex justify-center md:justify-end pt-4">
+                <x-buttons.custom-button text="Inhalte ausspielen" />
+            </div>
+
         </form>
     </x-card>
 </div>
 
-{{-- Include the JavaScript --}}
+{{-- Upload-image JavaScript --}}
 @push('scripts')
-<script src="{{ asset('js/components/image-upload.js') }}"></script>
+    <script src="{{ asset('js/components/image-upload.js') }}"></script>
 @endpush

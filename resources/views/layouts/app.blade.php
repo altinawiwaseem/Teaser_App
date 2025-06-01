@@ -20,18 +20,18 @@
         <!-- Right-aligned content -->
         <div class="flex justify-end items-center space-x-4">
             @auth
-            <span class="text-green-100 text-sm">{{ auth()->user()->name }}</span>
-            <form method="POST" action="{{ route('logout') }}" class="inline">
-                @csrf
-                <button type="submit" class="text-white hover:text-green-200 underline transition-colors text-sm">
-                    Logout
-                </button>
-            </form>
+                <span class="text-green-100 text-sm">{{ auth()->user()->name }}</span>
+                <form method="POST" action="{{ route('logout') }}" class="inline">
+                    @csrf
+                    <button type="submit" class="text-white hover:text-green-200 underline transition-colors text-sm">
+                        Logout
+                    </button>
+                </form>
             @else
-            <a href="{{ route('login') }}"
-                class="text-white hover:text-green-200 underline transition-colors text-sm">Login</a>
-            <a href="{{ route('register') }}"
-                class="text-white hover:text-green-200 underline transition-colors text-sm">Register</a>
+                <a href="{{ route('login') }}"
+                    class="text-white hover:text-green-200 underline transition-colors text-sm">Login</a>
+                <a href="{{ route('register') }}"
+                    class="text-white hover:text-green-200 underline transition-colors text-sm">Register</a>
             @endauth
         </div>
     </header>
@@ -39,9 +39,9 @@
     <!-- Main Content -->
     <main class="py-8 min-h-screen">
         @isset($slot)
-        {{ $slot }}
+            {{ $slot }}
         @else
-        @yield('content')
+            @yield('content')
         @endisset
     </main>
 
